@@ -28,9 +28,9 @@ public class QuizzApp extends JFrame {
 	int index = 0;
 	int[] users;
 	int[] numbers;
-	int[] answering;
+	JLabel [] answering;
 	JButton[] jbtn;
-	int[] sortnumbers;
+	int [] sortnumbers;
 	boolean correct = true;
 	int round = 1;
 
@@ -84,7 +84,7 @@ public class QuizzApp extends JFrame {
 		res.setBounds(162, 469, 721, 57);
 		panel.add(res);
 		
-		JLabel answering[] = new JLabel[14];
+	 answering = new JLabel[14];
 		
 		
 			for(int i =0; i< numbercount; i++){
