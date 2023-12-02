@@ -19,27 +19,45 @@ import java.util.Arrays;
 public class QuizzApp extends JFrame {
 
 	private JFrame frame;
-	private JTextField answer;
+	//전체적인 frame
 	public JTextField usernumber;
+	//사용자가 적은 숫자를 보여주는 textfield
+	//무슨 수의 버튼을 선택했는지를 보여준다.
 	public JPanel panel;
+	//frame 위의 panel. 
+	//사실상 모든 component들이 panel에 소속되어 있는 상황.
 	private JLabel life;
+	// life라고 하지만, round를 표시하는 곳.(현재 무슨 round인지 알게 해줌.)
 	private JLabel res;
+	// 맞았는지, 틀렸는지 알려주는 text를 내보낼 곳.
 	int numbercount = 5;
+	// round별로 필요한 숫자의 개수
+	// 1번째 round를 기준으로 초기화했기 때문에 5로 되어 있는 것.
+	// round가 진행될수록 증가시켜야 함.
 	int index = 0;
+	// 이름은 index이지만, 역할로 보자면 사용자가 버튼을 누른 수를 세는 역할이다.
+	// 버튼을 누른 수가 numbercount(주어진 숫자의 개수)와 동일한지를 확인해야 함.
 	int[] users;
+	// 사용자가 입력한 값들이 저장되는 배열
 	int[] numbers;
+	// 랜덤으로 숫자가 생성될 때, 해당 숫자들이 저장되는 배열
+	// users와 numbers를 비교해서, 값이 모두 동일하면 정답으로 처리.
 	JLabel[] answering;
+	// 랜덤으로 생성된 숫자를 사용자에게 보여주는 label
 	JButton[] jbtn;
+	// 버튼을 저장하는 배열
 	int[] sortnumbers;
+	// 버튼은 랜덤으로 생성된 숫자들을 오름차순으로 표시해야 하기 때문에 오름차순으로 정렬한 배열.
 	boolean correct = true;
+	// 답이 맞았는지 틀렸는지를 확인하기 위한 변수
 	int round = 1;
+	// round를 세는 변수
 
 
 	private void initialize() {
 		numbers = new int[14];
 		sortnumbers = new int[14];
 		users = new int[14];
-		//numbercount의 역할: round별로 생성되는 숫자의 개수
 		
 		jbtn = new JButton[9];
 		
